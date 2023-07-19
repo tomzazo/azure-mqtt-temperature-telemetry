@@ -1,0 +1,11 @@
+[Unit]
+Description=Get temperature from sensor
+
+[Service]
+ExecStartPre=/bin/sleep 30
+ExecStart=sh /home/pi/deploy/scripts/get-temp.sh
+User=pi
+Restart=always
+
+[Install]
+WantedBy=default.target

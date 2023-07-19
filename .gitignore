@@ -1,0 +1,4 @@
+.env-secret
+bin
+mqtt_sender.zip
+config.yml

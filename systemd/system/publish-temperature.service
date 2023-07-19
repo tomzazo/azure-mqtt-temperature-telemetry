@@ -1,0 +1,11 @@
+[Unit]
+Description=Publish temperature to cloud
+
+[Service]
+ExecStartPre=/bin/sleep 60
+ExecStart=/home/pi/deploy/mqtt_sender
+User=pi
+Restart=always
+
+[Install]
+WantedBy=default.target
