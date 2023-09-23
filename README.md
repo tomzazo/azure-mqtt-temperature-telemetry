@@ -1,10 +1,10 @@
-## Azure temperature telemetry via MQTT
+## Raspberry Pi temperature telemetry to Azure IoT Hub
 
-An example of Raspberry Pi Zero W being used to read temperature using a DS18B20 temperature sensor and report those readings to Azure IoT Hub.
+An example of Raspberry Pi being used to read temperature using a DS18B20 temperature sensor and report those readings to Azure IoT Hub.
 
 ### Pre-requisites
 
-- Raspberry Pi Zero W
+- Raspberry Pi
   - Raspberry Pi OS with one-wire interface enabled
 - DS18B20 temperature sensor
 - IoT Hub setup on Azure
