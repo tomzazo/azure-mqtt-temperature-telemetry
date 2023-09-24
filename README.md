@@ -1,4 +1,4 @@
-## Raspberry Pi temperature telemetry to Azure IoT Hub
+## Azure IoT Hub temperature telemetry
 
 An example of Raspberry Pi being used to read temperature using a DS18B20 temperature sensor and report those readings to Azure IoT Hub.
 
