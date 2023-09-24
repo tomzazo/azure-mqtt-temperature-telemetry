@@ -36,4 +36,4 @@ azure_device_key: "[IoT Hub device key]"
 
 2.) Register systemd services from `systemd/system` in Raspberry Pi OS.
 
-Raspberry Pi will read the temperature in Celsius each 30 seconds and then report it to Azure each minute.
+Raspberry Pi will read the temperature in Celsius every 30 seconds and then report it to Azure every minute.
