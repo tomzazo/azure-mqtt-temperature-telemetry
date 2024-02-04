@@ -11,15 +11,7 @@ An example of Raspberry Pi being used to read temperature using a DS18B20 temper
 
 ### Required secrets
 
-Two files with secrets must first be supplied at root: `.env-secret` and `config.yml`
-
-Example of `.env-secret` (required by `direnv`):
-
-```
-TARGET_IP=[rPi ipv4 address]
-TARGET_USER=[rPi user]
-TARGET_DIRECTORY=[project target directory on rPi]
-```
+A file with secrets must first be supplied at root named `config.yml`
 
 Example of `config.yml`:
 
@@ -32,8 +24,8 @@ azure_device_key: "[IoT Hub device key]"
 
 ### Usage
 
-1.) Run `make deploy` from root.
+1.) Change Ansible inventory to point to your Raspberry Pi device.
 
-2.) Register systemd services from `systemd/system` in Raspberry Pi OS.
+2.) Run `just setup` at root.
 
 Raspberry Pi will read the temperature in Celsius every 30 seconds and then report it to Azure every minute.
