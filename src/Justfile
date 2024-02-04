@@ -1,0 +1,3 @@
+@build:
+	env GOARCH=arm go build -o bin/mqtt_sender
+	

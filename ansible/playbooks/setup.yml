@@ -1,0 +1,37 @@
+---
+- name: Setup Docker
+  hosts: rpiservers
+  remote_user: pi
+
+  tasks:
+  - name: Create deploy directory
+    file:
+      path: /home/pi/deploy
+      state: directory
+  - name: Copy mqtt_sender items
+    copy: 
+      src: "{{ item.src }}" 
+      dest: /home/pi/deploy
+      owner: pi
+      group: pi
+      mode: "{{ item.mode }}"
+    loop:
+      - src: ../../src/bin/mqtt_sender
+        mode: '774'
+      - src: ../../src/scripts
+        mode: '444'
+      - src: ../../src/systemd
+        mode: '444'
+      - src: ../../src/sensors
+        mode: '444'
+      - src: ../../src/config.yml
+        mode: '444'
+  - name: Copy systemd services
+    become: true
+    copy: 
+      remote_src: true
+      src: /home/pi/deploy/systemd/system/
+      dest: /etc/systemd/system/
+  - name: Reboot
+    become: true
+    reboot:

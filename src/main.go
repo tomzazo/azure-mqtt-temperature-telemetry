@@ -125,25 +125,26 @@ func main() {
 
 	client := mqtt.NewClient(clientOptions)
 
+	fmt.Println("Establishing connection to Azure...")
 	connectToken := client.Connect()
 
 	<-connectToken.Done()
 
 	if err := connectToken.Error(); err != nil {
-		log.Println("error connecting MQTT client: ", err)
-
-		return
+		log.Fatal("error connecting MQTT client: ", err)
 	}
+	fmt.Println("Done.")
 
+	fmt.Println("Getting temperature readings...")
 	tempFloat, err := getTemperatureReading()
 	if err != nil {
-		log.Println("error getting temperature reading: ", err)
-
-		return
+		log.Fatal("error getting temperature reading: ", err)
 	}
+	fmt.Println("Done.")
 
 	msg := fmt.Sprintf("%.1f", tempFloat)
 
+	fmt.Println("Publishing temperature readings...")
 	publishToken := client.Publish(
 		cfg.AzureMQTTEndpoint,
 		0,
@@ -158,4 +159,5 @@ func main() {
 
 		return
 	}
+	fmt.Println("Done.")
 }

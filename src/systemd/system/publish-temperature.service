@@ -1,5 +1,5 @@
 [Unit]
-Description=Publish temperature to cloud
+Description=Publish temperature to Azure
 
 [Service]
 ExecStartPre=/bin/sleep 60

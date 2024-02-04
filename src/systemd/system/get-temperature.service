@@ -1,5 +1,5 @@
 [Unit]
-Description=Get temperature from sensor
+Description=Get temperature from local sensor
 
 [Service]
 ExecStartPre=/bin/sleep 30
