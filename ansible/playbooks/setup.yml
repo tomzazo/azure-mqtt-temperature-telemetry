@@ -14,18 +14,14 @@
       dest: /home/pi/deploy
       owner: pi
       group: pi
-      mode: "{{ item.mode }}"
+      mode: "{{ item.mode | default('444') }}"
     loop:
       - src: ../../src/bin/mqtt_sender
         mode: '774'
       - src: ../../src/scripts
-        mode: '444'
       - src: ../../src/systemd
-        mode: '444'
       - src: ../../src/sensors
-        mode: '444'
       - src: ../../src/config.yml
-        mode: '444'
   - name: Copy systemd services
     become: true
     copy: 
