@@ -1,0 +1,11 @@
+name: Test
+on:
+  schedule:
+    # - cron:  '0 17 1 1-12 *'
+    - cron:  '33 9 * * *'
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Every time
+        run: echo "This step will always run"

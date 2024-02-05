@@ -17,7 +17,7 @@ Example of `config.yml`:
 
 ```
 azure_mqtt_host: "[Azure IoT Hub hostname]"
-azure_mqtt_endpoint: "devices/[IoT Hub device ID]/messages/events/[IoT Hub endpoint name]"
+azure_mqtt_endpoint: "devices/[IoT Hub device ID]/messages/events/"
 azure_device_name: "[IoT Hub device ID]"
 azure_device_key: "[IoT Hub device key]"
 ```
