@@ -32,6 +32,13 @@
       remote_src: true
       src: /home/pi/deploy/systemd/system/
       dest: /etc/systemd/system/
-  - name: Reboot
-    become: true
-    reboot:
+  - name: Enable get-temperature service
+    systemd:
+      name: get-temperature
+      enabled: true
+      state: started
+  - name: Enable publish-temperature service
+    systemd:
+      name: publish-temperature
+      enabled: true
+      state: started

@@ -21,6 +21,7 @@ import (
 const (
 	configFilePath      = "config.yml"
 	mqttProtocolVersion = 4 //v3.1.1
+	mqttQoS             = 2
 )
 
 // Temperature constants.
@@ -147,10 +148,12 @@ func main() {
 	fmt.Println("Publishing temperature readings...")
 	publishToken := client.Publish(
 		cfg.AzureMQTTEndpoint,
-		0,
+		mqttQoS,
 		false,
 		msg,
 	)
+
+	publishToken.Wait()
 
 	<-publishToken.Done()
 
