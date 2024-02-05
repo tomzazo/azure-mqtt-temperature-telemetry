@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   build:
-    image: golang:1.20.1-alpine3.17
+    image: golang:1.21.5-alpine3.17
     container_name: build
     working_dir: /app
     command: "env GOOS=linux GOARCH=arm go build -o bin/mqtt_sender"
