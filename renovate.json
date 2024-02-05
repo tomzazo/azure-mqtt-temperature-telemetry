@@ -2,8 +2,11 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "packageRules": [
     {
-      "matchPackageNames": [
+      "matchManagers": [
         "docker-compose"
+      ],
+      "matchPackageNames": [
+        "golang"
       ],
       "allowedVersions": "<1.21"
     }
