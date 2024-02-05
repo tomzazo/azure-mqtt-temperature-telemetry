@@ -1,8 +1,8 @@
-name: Azure function test
+name: Dependency update
 on:
   schedule:
     # - cron:  '0 17 1 1-12 *'
-    - cron:  '15 10 * * *'
+    - cron:  '20 10 * * *'
 jobs:
   renovate:
     runs-on: ubuntu-latest
