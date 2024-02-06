@@ -14,7 +14,6 @@ jobs:
         with:
           app-id: ${{ secrets.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-          github-api-url: "https://github.acme-inc.com/api/v3"
       - uses: ./actions/staging-tests
         with:
           token: ${{ steps.app-token.outputs.token }}
