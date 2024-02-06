@@ -1,11 +1,11 @@
 ## Azure IoT Hub temperature telemetry
 
-An example of Raspberry Pi being used to read temperature using a DS18B20 temperature sensor and report those readings to Azure IoT Hub *without any SDKs*.
+An example of a Raspberry Pi being used to read temperature using a DS18B20 temperature sensor and report those readings to an Azure IoT Hub _without any SDKs_.
 
 ### Pre-requisites
 
 - Raspberry Pi
-  - Raspberry Pi OS with one-wire interface enabled
+  - Raspbian/Raspberry Pi OS with the one-wire interface enabled
 - DS18B20 temperature sensor
 - IoT Hub setup on Azure
 
